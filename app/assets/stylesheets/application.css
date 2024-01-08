@@ -1,0 +1,5 @@
+@import "bootstrap";
+
+.trix-editor {
+    min-height: 200px; /* Adjust the height as needed */
+  }
