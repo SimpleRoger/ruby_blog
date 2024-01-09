@@ -1,0 +1,16 @@
+<div id="<%= dom_id tag %>">
+  <p>
+    <h1>Name: <%= tag.name %></h1>
+    
+    
+  </p>
+  <%# we can do this as its linked %>
+  <% tag.taggables.each do |taggable| %>
+    <h2> Post: </h2>  
+    <%= render 'articles/show', article: taggable.article %>
+    <%= link_to "Read More", taggable.article %>
+    <hr />
+  <% end %>
+</div>
+
+

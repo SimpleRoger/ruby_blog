@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :tags
   root "articles#index"
   #get articles are mapped to the index action of articlescontroller
   # get "/articles", to: "articles#index"

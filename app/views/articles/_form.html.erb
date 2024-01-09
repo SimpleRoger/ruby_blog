@@ -1,24 +1,24 @@
-    <%= form_with model: article do |form|%>
+    <%= simple_form_for @article do |form|%>
     <div>
-        <%= form.label :title %><br>
-        <%= form.text_field :title %>
-        <% article.errors.full_messages_for(:title).each do |message|%>
-            <div><%= message%></div>
-        <%end%>
+        <%= form.input :title, label: 'Title' %>
     </div>
-
-    <div class="mb-2" style="flex-grow: 1;">
-        <%= form.label :body %><br>
+        <div class="mb-2" style="flex-grow: 1;">
         <div class = "mb-2"> 
-            <%= form.rich_text_area :body, class: 'trix-content', style: 'min-height: 100px; border: 1px solid black;'%>
+            <%= form.input :body, as: :rich_text_area, label: 'Body', class: 'trix-content', style: 'min-height: 100px; border: 1px solid black;'%>
         </div>
         <% article.errors.full_messages_for(:body).each do |message| %>
             <div><%= message%></div>
         <%end%>
     </div>
-
     <div>
-        <%= form.submit %>
+
+    <%= form.input :tags, input_html: { value: article.tags.map(&:name).join(",") } %>
     </div>
+    <div>
+        <% form.submit %>
+    </div>
+
+
+   
 
     <%end%>

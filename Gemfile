@@ -9,6 +9,9 @@ gem 'carrierwave', '~> 3.0'
 
 gem 'sassc-rails', '~> 2.0'
 
+gem 'slim-rails'
+gem 'simple_form'
+
 gem "cssbundling-rails"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -19,6 +22,10 @@ gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
+
+gem 'trix-rails'
+
+
 
 gem "bootstrap", ">= 5.0"
 
@@ -74,3 +81,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "devise", "~> 4.9"
